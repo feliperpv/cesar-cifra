@@ -5,6 +5,9 @@
  */
 package cifracesar;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 
@@ -122,9 +125,21 @@ public class CifraCesar {
      */
     public static void main(String[] args) {
         
-        //String texto = "Isto não é uma menssagem é uma cachaça 99725400 Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.";
-        String texto = "Um texto cuja modalidade se define pela natureza argumentativa representa, sobretudo, aquele texto em que se atesta a capacidade de o emissor discorrer, defender seu ponto de vista acerca deste ou daquele assunto.";
-        int shift = 9;
+        BufferedReader buff = 
+                new BufferedReader(new InputStreamReader(System.in));
+        
+        String texto = "";
+        String str = null;
+        try{
+            while ((str = buff.readLine()) != null) {
+                texto = texto + str;
+            }
+        } catch(IOException e){
+            e.printStackTrace();
+        }        
+        
+        String type = new String(args[0]);
+        int shift = Integer.parseInt(args[1]);
         int shiftNum = shift;
         int shiftChar = shift;
                 
@@ -139,11 +154,19 @@ public class CifraCesar {
         
         texto = removeAcento(texto);
         
-        String cipher = encrypt(texto, shiftChar, shiftNum);
-        System.out.println(cipher);
-        
-        String decrypted = decrypt(cipher, shiftChar, shiftNum);
-        System.out.println(decrypted);
+        if(type.equalsIgnoreCase("c")){
+            
+            String cipher = encrypt(texto, shiftChar, shiftNum);
+            System.out.println(cipher);
+            
+        } else if(type.equalsIgnoreCase("d")){
+            
+            String decrypted = decrypt(texto, shiftChar, shiftNum);
+            System.out.println(decrypted);
+            
+        } else {
+            System.out.println("Tipo inválido");
+        }
     }
     
     public static String removeAcento(String str) {
