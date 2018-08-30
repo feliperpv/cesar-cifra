@@ -132,7 +132,7 @@ public class CifraCesar {
         String str = null;
         try{
             while ((str = buff.readLine()) != null) {
-                texto = texto + str;
+                texto = texto + str + "\r\n";
             }
         } catch(IOException e){
             e.printStackTrace();

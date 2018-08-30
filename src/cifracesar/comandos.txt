@@ -1,5 +1,5 @@
-cd C:\Users\Cliente\Desktop\CifraCesar\src\cifracesar
-javac CifraCesar.java
+cd C:\Users\Cliente\Desktop\CifraCesar\src\
+javac cifracesar/CifraCesar.java
 
 cd C:\Users\Cliente\Desktop\CifraCesar\src\ ou cd ..
 java cifracesar.CifraCesar c 5 < cifracesar/t.txt > cifracesar/r.txt
