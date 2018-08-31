@@ -165,7 +165,7 @@ public class CifraCesar {
             System.out.println(decrypted);
             
         } else {
-            System.out.println("Tipo inválido");
+            System.out.println("Operação '" + type + "' inválido");
         }
     }
     
