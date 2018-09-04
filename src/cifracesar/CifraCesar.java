@@ -140,6 +140,10 @@ public class CifraCesar {
         
         String type = new String(args[0]);
         int shift = Integer.parseInt(args[1]);
+        
+//String texto = "A a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a E e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e O o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s S s s R r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r I i i i i i i i i i i i i i i i i i i i i i i i i i i  i i i i i i i i i i i i i";
+        //String type = "c";
+        //int shift = 5;
         int shiftNum = shift;
         int shiftChar = shift;
                 
